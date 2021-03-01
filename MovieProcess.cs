@@ -1,6 +1,10 @@
 using System;
 using System.IO;
 using System.Collections;
+//----------------------------------------------------
+//Disregard this file, I decided to make a new set of classes
+//For the assignment
+//----------------------------------------------------
 public class MovieProcess{
     ArrayList movies = new ArrayList();
     private Int32 counter = 0;

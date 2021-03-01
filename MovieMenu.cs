@@ -1,5 +1,7 @@
 using System;
 using System.IO;
+
+
 public class MovieMenu{
     
     public MovieMenu(){
@@ -8,8 +10,8 @@ public class MovieMenu{
 
     public void displayMenu(){
         int userInput = 0;
-        while(!(userInput == 3)){
-            Console.WriteLine("[1] List Movies \n[2] Add Movie \n[3] Exit ");
+        while(!(userInput > 4)){
+            Console.WriteLine("[1] List Movies \n[2] List Shows \n[3] List Videos ");
             userInput = Int32.Parse(Console.ReadLine());
             testInput(userInput);
         }
@@ -18,18 +20,19 @@ public class MovieMenu{
 
     public void testInput(int userInput){
         MovieProcess movieOptions = new MovieProcess();
+        MediaCenter mc = new MediaCenter();
             
             
         if(userInput > 0 && userInput < 4){
             switch(userInput){
                 case 1:
-                    movieOptions.listMovies();
+                    mc.readFile("movies.csv", "MOVIE");
                 break;
                 case 2:
-                    movieOptions.addMovies(movieOptions.listMovies());
+                    mc.readFile("shows.csv", "SHOW");
                 break;
                 case 3:
-
+                    mc.readFile("videos.csv", "VIDEO");
                 break;
             }
         }
